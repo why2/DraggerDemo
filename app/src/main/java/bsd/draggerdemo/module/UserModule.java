@@ -1,6 +1,7 @@
 package bsd.draggerdemo.module;
 
 import android.content.Context;
+import android.util.Log;
 
 import javax.inject.Singleton;
 
@@ -13,12 +14,16 @@ import dagger.Provides;
  * 提供依赖类
  * 这里的@Singleton不能用在类上，应该用在方法上
  */
-@Module//标识该类提供依赖
+
+//标识该类提供依赖
+@Module
 public class UserModule {
     private Context context;
 
-    //告诉Dagger我们想要构造对象并提供这些依赖
-    //这里是让User以单利形式出现
+    /**
+     * 告诉Dagger我们想要构造对象并提供这些依赖
+     * 这里是让User以单利形式出现
+     */
     @Singleton
     @Provides
     public User provideUser() {
@@ -34,9 +39,12 @@ public class UserModule {
         this.context = context;
     }
 
-    //提供给Component的Context
+    /**
+     * 提供给Component的Context
+     */
     @Provides
     public Context provideUserContext() {
+        Log.i("=============", "provideContext");
         return context;
     }
 }

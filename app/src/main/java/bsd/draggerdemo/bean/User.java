@@ -2,6 +2,7 @@ package bsd.draggerdemo.bean;
 
 /**
  * Created by ShiDa.Bian on 2017/2/9.
+ * 需要注入的对象类
  */
 public class User {
     private String name;

@@ -5,7 +5,7 @@ import android.content.Context;
 import javax.inject.Singleton;
 
 import bsd.draggerdemo.MainActivity;
-import bsd.draggerdemo.module.NBUserModule;
+import bsd.draggerdemo.module.MapKeyModule;
 import bsd.draggerdemo.module.UserModule;
 import dagger.Component;
 
@@ -16,10 +16,12 @@ import dagger.Component;
  * 1.如果这里需要使用单利的话，就需要在module和component中同时设置@Singleton
  */
 @Singleton
-@Component(modules = {UserModule.class, NBUserModule.class})
+@Component(modules = {UserModule.class, MapKeyModule.class})
 public interface UserComponent {
     void inject(MainActivity activity);
 
-    //这里获得的是UserModule提供的Context
+    /**
+     *  这里获得的是UserModule提供的Context
+     */
     Context getContext();
 }
