@@ -26,7 +26,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.0.1'
 
-    //java注解
+    //java注解  
+    //provided 表示该第三方库仅仅是在编译阶段和测试阶段使用到，不会出现在运行阶段，即表示不会打包到最终的 apk 文件中去，目标运行环境已经包含有该第三方库
     provided 'javax.annotation:javax.annotation-api:1.2'
     //dagger2
     compile 'com.google.dagger:dagger:2.5'
